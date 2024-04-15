@@ -66,7 +66,9 @@ const TodoElement = ({ todo }) => {
                 rows={10}
               />
             ) : (
-              <div className="flex items-center w-full text-xl">{todoText}</div>
+              <div className="flex items-center text-xl break-all">
+                {todoText}
+              </div>
             )}
             {isTodoEdit ? (
               <div className="grid grid-cols-2 gap-5">
