@@ -15,6 +15,7 @@ const TodoElement = ({ todo }) => {
   const [isTodoEdit, SetIsTodoEdit] = useState(false);
   const [isColorEdit, SetIsColorEdit] = useState(false);
   const [todoText, setTodoText] = useState(todo.text || "");
+  const originalText = todo.text;
   const [isCompleted, setIsCompleted] = useState(todo.completed);
   const [todoDisplay, setTodoDisplay] = useState(false);
 
@@ -38,6 +39,11 @@ const TodoElement = ({ todo }) => {
     const newColor = e.target?.value;
     dispatch(setNewTodoColors({ todoId: todo.id, newColor: newColor }));
     SetIsColorEdit(false);
+  };
+
+  const discardTodoTextChanges = () => {
+    SetIsTodoEdit(false);
+    setTodoText(originalText);
   };
 
   return (
@@ -69,7 +75,7 @@ const TodoElement = ({ todo }) => {
                 </button>
                 <button
                   className="btn text-lg"
-                  onClick={() => SetIsTodoEdit(false)}
+                  onClick={discardTodoTextChanges}
                 >
                   Discard Changes
                 </button>
@@ -136,6 +142,7 @@ const TodoElement = ({ todo }) => {
           </div>
         </div>
       )}
+
       <div
         className={` text-dark-text flex px-5 py-4 w-full gap-0 rounded-lg shadow-md shadow-light-primary ${
           isCompleted ? "bg-dark-accent" : todo.color
@@ -151,7 +158,7 @@ const TodoElement = ({ todo }) => {
           />
         ) : (
           <div
-            className="h-full flex items-center py-2 w-2/3 cursor-pointer "
+            className="h-full flex items-center py-2 w-2/3 cursor-pointer text-xl"
             onClick={() => setTodoDisplay(true)}
           >
             <div className="w-full truncate flex items-center ">{todoText}</div>
@@ -162,7 +169,7 @@ const TodoElement = ({ todo }) => {
             <button className="btn " onClick={updateTodo}>
               Save Changes
             </button>
-            <button className="btn " onClick={() => SetIsTodoEdit(false)}>
+            <button className="btn " onClick={discardTodoTextChanges}>
               Discard Changes
             </button>
           </div>
