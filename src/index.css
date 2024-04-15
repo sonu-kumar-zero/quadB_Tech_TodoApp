@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.remove_scroll_bar::-webkit-scrollbar {
+  display: none;
+}
+
+.anton__font {
+  font-family: "Anton";
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.libre__bodoni__font {
+  font-family: "Libre Bodoni";
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
