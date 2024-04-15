@@ -7,21 +7,29 @@ WebTodo is a todo app built with ReactJS and Redux. It offers features like addi
 Node.js should be installed on your system.
 Installation Steps
 ### Clone the repository:
+/```
 bash
 Copy code
-git clone https://github.com/yourusername/WebTodo.git
+git clone [repo](https://github.com/sonu-kumar-zero/quadB_Tech_TodoApp.git)
+/```
 ### Navigate to the project directory:
+/```
 bash
 Copy code
-cd WebTodo
+cd quadB_Tech_TodoApp
+/```
 ### Install dependencies:
+/```
 bash
 Copy code
 npm install
+/```
 ### Start the application:
+/```
 bash
 Copy code
 npm start
+/```
 ## Deployment
 You can deploy this website directly on Vercel or Netlify.
 
