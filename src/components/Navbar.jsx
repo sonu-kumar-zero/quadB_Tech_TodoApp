@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center py-5 px-40 bg-light-secondary dark:bg-dark-secondary text-light-text dark:text-dark-text">
+    <div className="flex justify-between items-center py-5 px-5 lg:px-40 bg-light-secondary dark:bg-dark-secondary text-light-text dark:text-dark-text">
       <div className="text-4xl">Todo App</div>
       <button className="btn" onClick={handleThemeSwitch}>
         {theme === "light" ? <CiCloudSun size={32}/> : <CiCloudMoon size={32} />}

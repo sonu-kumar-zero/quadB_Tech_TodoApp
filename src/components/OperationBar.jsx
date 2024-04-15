@@ -2,8 +2,8 @@ import React from "react";
 
 const OperationBar = ({ selectFilter }) => {
   return (
-    <div className="flex px-40 justify-center gap-5">
-      <button className="btn text-xl" value={"all"} onClick={selectFilter}>
+    <div className="grid grid-cols-2 lg:flex px-5 lg:px-40 justify-center gap-5">
+      <button className="btn text-xl col-span-2" value={"all"} onClick={selectFilter}>
         All
       </button>
       <button

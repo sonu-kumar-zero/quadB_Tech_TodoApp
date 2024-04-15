@@ -48,12 +48,13 @@ const AllTodosComponent = () => {
   return (
     <>
       <OperationBar selectFilter={selectFilter} />
-      <div className="px-40 mt-5 overflow-y-scroll text-light-text dark:text-dark-text grid grid-cols-1 gap-5 max-h-[42dvh] remove_scroll_bar">
+      <div className="px-5 lg:px-40 mt-5 lg:overflow-y-scroll text-light-text dark:text-dark-text grid grid-cols-1 gap-5 lg:max-h-[42dvh] remove_scroll_bar">
         {allFinalTodos?.length > 0 &&
           allFinalTodos?.map((todo) => {
             return <TodoElement key={todo.id} todo={todo} />;
           })}
       </div>
+      <div className="lg:hidden h-10"></div>
     </>
   );
 };

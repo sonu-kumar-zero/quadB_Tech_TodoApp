@@ -49,8 +49,8 @@ const TodoElement = ({ todo }) => {
   return (
     <>
       {todoDisplay && (
-        <div className="absolute top-0 left-0 w-[100dvw] h-[100dvh] bg-dark-primary bg-opacity-50 flex justify-center items-center text-dark-text dark:text-dark-text">
-          <div className="w-[30dvw] bg-dark-secondary px-10 py-5 rounded-lg shadow-md h-fit flex flex-col gap-5 parent">
+        <div className="fixed top-0 left-0 w-[100dvw] h-full bg-dark-primary bg-opacity-50 flex justify-center items-center text-dark-text dark:text-dark-text">
+          <div className="w-[90dvw] md:w-[70dvw] lg:w-[40dvw] bg-dark-secondary px-10 py-5 rounded-lg shadow-md h-fit flex flex-col gap-5 parent">
             <div className="flex justify-end">
               <button className="btn" onClick={() => setTodoDisplay(false)}>
                 X
@@ -58,7 +58,7 @@ const TodoElement = ({ todo }) => {
             </div>
             {isTodoEdit ? (
               <textarea
-                className="px-5 py-2 text-dark-text bg-dark-accent outline-none rounded-lg remove_scroll_bar w-full h-fit"
+                className="px-5 py-2 text-dark-text bg-dark-accent outline-none rounded-lg remove_scroll_bar w-full h-fit text-xl"
                 value={todoText}
                 onChange={(e) => {
                   setTodoText(e.target.value);
@@ -66,7 +66,7 @@ const TodoElement = ({ todo }) => {
                 rows={10}
               />
             ) : (
-              <div className="flex items-center w-full">{todoText}</div>
+              <div className="flex items-center w-full text-xl">{todoText}</div>
             )}
             {isTodoEdit ? (
               <div className="grid grid-cols-2 gap-5">
@@ -144,13 +144,13 @@ const TodoElement = ({ todo }) => {
       )}
 
       <div
-        className={` text-dark-text flex px-5 py-4 w-full gap-0 rounded-lg shadow-md shadow-light-primary ${
+        className={`text-dark-text flex flex-col lg:flex-row px-5 py-4 w-full gap-5 lg:gap-0 rounded-lg shadow-md shadow-light-primary ${
           isCompleted ? "bg-dark-accent" : todo.color
         }`}
       >
         {isTodoEdit && !todoDisplay ? (
           <textarea
-            className="w-2/3 px-5 py-2 text-dark-text bg-dark-accent outline-none rounded-lg remove_scroll_bar"
+            className="text-xl lg:w-2/3 px-5 py-2 text-dark-text bg-dark-accent outline-none rounded-lg remove_scroll_bar"
             value={todoText}
             onChange={(e) => {
               setTodoText(e.target.value);
@@ -158,23 +158,23 @@ const TodoElement = ({ todo }) => {
           />
         ) : (
           <div
-            className="h-full flex items-center py-2 w-2/3 cursor-pointer text-xl"
+            className="h-full flex items-center py-2 lg:w-2/3 cursor-pointer text-xl"
             onClick={() => setTodoDisplay(true)}
           >
-            <div className="w-full truncate flex items-center ">{todoText}</div>
+            <div className="h-fit truncate">{todoText}</div>
           </div>
         )}
         {isTodoEdit ? (
-          <div className="grid grid-cols-2 gap-5 w-1/3 px-5">
-            <button className="btn " onClick={updateTodo}>
+          <div className="grid grid-cols-2 gap-5 w-full lg:w-1/3 px-5 items-center">
+            <button className="btn h-fit" onClick={updateTodo}>
               Save Changes
             </button>
-            <button className="btn " onClick={discardTodoTextChanges}>
+            <button className="btn h-fit" onClick={discardTodoTextChanges}>
               Discard Changes
             </button>
           </div>
         ) : (
-          <div className="flex gap-3 justify-around w-1/3 items-center">
+          <div className="flex gap-3 justify-around w-full lg:w-1/3 items-center">
             {!isCompleted ? (
               <button
                 className="bg-dark-text text-light-text px-4 py-4 w-fit rounded hover:outline h-fit"
