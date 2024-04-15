@@ -27,3 +27,9 @@
   font-weight: 500;
   font-style: normal;
 }
+
+
+
+.btn {
+  @apply px-5 py-2 flex items-center justify-center rounded-full border-2 border-light-border hover:border-dark-border dark:border-dark-border hover:dark:border-light-border bg-light-accent dark:bg-dark-accent  dark:shadow-dark-text;
+}
