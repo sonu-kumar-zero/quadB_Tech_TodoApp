@@ -1,5 +1,6 @@
 # WebTodo
-WebTodo is a todo app built with ReactJS and Redux. It offers features like adding, deleting, updating, checking off todos, and includes filters for old, latest, completed, and incomplete tasks. Additionally, you can customize the colors of your todos, and the data is stored in the local storage of the browser.
+  WebTodo is a todo app built with ReactJS and Redux. It offers features like adding, deleting, updating, checking off todos, and includes filters for old, latest, completed, and incomplete tasks. Additionally, you can customize the colors of your todos, and the data is stored in the local storage of the browser.
+
 ---
 
 ## Setup and Installation
@@ -8,22 +9,18 @@ Node.js should be installed on your system.
 Installation Steps
 ### Clone the repository:
 ```bash
-Copy code
-git clone [repo](https://github.com/sonu-kumar-zero/quadB_Tech_TodoApp.git)
+git clone https://github.com/sonu-kumar-zero/quadB_Tech_TodoApp.git
 ```
 ### Navigate to the project directory:
 ```bash
-Copy code
 cd quadB_Tech_TodoApp
 ```
 ### Install dependencies:
 ```bash
-Copy code
 npm install
 ```
 ### Start the application:
 ```bash
-Copy code
 npm start
 ```
 ## Deployment
